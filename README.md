@@ -2,7 +2,7 @@
 
 Unsupervised bilateral partial graph alignment: Python API documentation, tutorials, source snapshots, and runnable examples.
 
-全部文档均可直接在本 GitHub 仓库阅读，无需跳转到独立网站。
+Read the documentation directly in this repository or visit https://bipga.github.io/.
 
 **Start here:** [Installation](guide/installation.md) · [Quick start](guide/quickstart.md) · [Python API](guide/api.md) · [Source code](guide/source.md) · [Examples](examples/README.md)
 

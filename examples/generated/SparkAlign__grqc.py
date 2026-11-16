@@ -5,7 +5,7 @@ data = bp.Dataset.load(
     "baseline_exdit_261029/date_261023/grqc/bpupga/"
     "rho_s0p6_rho_t0p6/construction_seed_2026")
 method = bp.Algorithm(
-    "oiteralign", seed=2026, device="cpu")
+    "SparkAlign", seed=2026, device="cpu")
 
 # The algorithm receives only graph topology.
 result = method.align(data.graph1, data.graph2)

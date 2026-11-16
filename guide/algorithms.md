@@ -20,7 +20,7 @@ The names below select the current project adapters. Parameter excerpts come fro
 | gradalign\_plus | GradAlign+ | epochs=10; k\_hop=3; hid\_dim=100; gradual\_iterations=10 |
 | grampa | GRAMPA | eta=1.0; center\_adjacency=False; dtype='float64' |
 | immnc | iMMNC | k\_de=3; k\_nei=3; initial\_anchor\_ratio=0.04; iterations=10 |
-| oiteralign | OIterAlign | dp\_min\_degree=6; diffusion\_step=5; nearest\_candidates=50 |
+| SparkAlign | SparkAlign | dp\_min\_degree=6; diffusion\_step=5; nearest\_candidates=50 |
 | opgm\_unsupervised | OPGM-U | layers=5; hidden\_dim=64; epochs=100; learning\_rate=0.001 |
 | regal | REGAL | max\_layer=2; alpha=0.01; buckets=2.0; landmark\_seed=42 |
 | s\_gwl | S-GWL | partition\_levels=3; cluster\_count=2; outer\_iterations=2000 |

@@ -278,7 +278,7 @@ result = bp.AlignmentResult(
 
 ## evaluate
 
-[source](../src/bpupga/_api.py#L261)
+[source](../src/bpupga/_api.py#L272)
 
 ```python
 evaluate(result, dataset, *, ks=(1, 5, 10)) -> dict
@@ -323,7 +323,7 @@ See [the complete report-key guide](evaluation.md#section-report-fields).
 
 ## diagnose
 
-[source](../src/bpupga/_api.py#L349)
+[source](../src/bpupga/_api.py#L360)
 
 ```python
 diagnose(result, dataset, *, ks=(1, 5, 10), example_limit=10, max_dense_entries=25_000_000) -> dict
@@ -371,7 +371,7 @@ See [diagnostic interpretation and scope](diagnostics.md).
 
 ## RunLog.open
 
-[source](../src/bpupga/_api.py#L408)
+[source](../src/bpupga/_api.py#L419)
 
 ```python
 RunLog.open(attempt_dir: str | Path) -> RunLog
@@ -411,7 +411,7 @@ print(run.native_metrics)
 
 ## RunLog properties and summary
 
-[source](../src/bpupga/_api.py#L396)
+[source](../src/bpupga/_api.py#L407)
 
 ```python
 run.status; run.native_metrics; run.runtime; run.errors; run.summary()

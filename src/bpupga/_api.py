@@ -39,7 +39,7 @@ from common.result import AlignmentResult  # noqa: E402
 
 _BUILTINS = frozenset((
     "alpine", "cena", "fugal", "gradalign_plus", "grampa", "immnc",
-    "oiteralign", "opgm_unsupervised", "regal", "s_gwl", "slotalign", "ulot",
+    "SparkAlign", "opgm_unsupervised", "regal", "s_gwl", "slotalign", "ulot",
 ))
 _CUSTOM: dict[str, Callable[..., Any]] = {}
 
@@ -201,6 +201,17 @@ class Algorithm:
                 if self.config["mu"] < 0 or self.config["weight"] not in {1, 2}:
                     raise ValueError("ALPINE requires nonnegative mu and weight in {1, 2}")
                 model = AuthorCPUAlpine(self.config)
+            elif self.method == "SparkAlign":
+                from dataclasses import asdict
+                from baseline.SparkAlign import SparkAlign, SparkAlignConfig
+                try:
+                    config = SparkAlignConfig(**dict(parameters, seed=self.seed,
+                        show_progress=False, compute_cost_matrix=True, max_dense_entries=150_000_000))
+                except TypeError as error:
+                    raise ValueError(f"Invalid parameters for SparkAlign: {error}") from error
+                config.validate()
+                self.config = asdict(config)
+                model = SparkAlign(config)
             else:
                 from baseline.registry import construct as make_model
                 model, self.config = make_model(self.method, parameters, self.seed, self.device, self.dataset_family)

@@ -20,7 +20,7 @@ The first example uses temporary data and a custom adapter. Prepared benchmark e
 | `cena` | [fbtw](generated/cena__fbtw.py) | [grqc](generated/cena__grqc.py) | [dblp](generated/cena__dblp.py) | [Arxiv1-Arxiv2](generated/cena__Arxiv1-Arxiv2.py) |
 | `s_gwl` | [fbtw](generated/s_gwl__fbtw.py) | [grqc](generated/s_gwl__grqc.py) | [dblp](generated/s_gwl__dblp.py) | [Arxiv1-Arxiv2](generated/s_gwl__Arxiv1-Arxiv2.py) |
 | `immnc` | [fbtw](generated/immnc__fbtw.py) | [grqc](generated/immnc__grqc.py) | [dblp](generated/immnc__dblp.py) | [Arxiv1-Arxiv2](generated/immnc__Arxiv1-Arxiv2.py) |
-| `oiteralign` | [fbtw](generated/oiteralign__fbtw.py) | [grqc](generated/oiteralign__grqc.py) | [dblp](generated/oiteralign__dblp.py) | [Arxiv1-Arxiv2](generated/oiteralign__Arxiv1-Arxiv2.py) |
+| `SparkAlign` | [fbtw](generated/SparkAlign__fbtw.py) | [grqc](generated/SparkAlign__grqc.py) | [dblp](generated/SparkAlign__dblp.py) | [Arxiv1-Arxiv2](generated/SparkAlign__Arxiv1-Arxiv2.py) |
 | `alpine` | [fbtw](generated/alpine__fbtw.py) | [grqc](generated/alpine__grqc.py) | [dblp](generated/alpine__dblp.py) | [Arxiv1-Arxiv2](generated/alpine__Arxiv1-Arxiv2.py) |
 | `gradalign_plus` | [fbtw](generated/gradalign_plus__fbtw.py) | [grqc](generated/gradalign_plus__grqc.py) | [dblp](generated/gradalign_plus__dblp.py) | [Arxiv1-Arxiv2](generated/gradalign_plus__Arxiv1-Arxiv2.py) |
 | `slotalign` | [fbtw](generated/slotalign__fbtw.py) | [grqc](generated/slotalign__grqc.py) | [dblp](generated/slotalign__dblp.py) | [Arxiv1-Arxiv2](generated/slotalign__Arxiv1-Arxiv2.py) |
