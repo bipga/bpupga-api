@@ -1,0 +1,7 @@
+recursive-include src/bpupga/_engine *
+recursive-include src/bpupga/examples *
+recursive-include tests *.py
+recursive-include tools *.py
+recursive-include docker *
+include install.sh bipga.sh requirements-lock.txt
+global-exclude __pycache__ *.py[cod]

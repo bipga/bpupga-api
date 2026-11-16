@@ -1,0 +1,8 @@
+.git
+.venv
+__pycache__
+*.pyc
+build
+dist
+paper
+paper_artifact.tar.xz

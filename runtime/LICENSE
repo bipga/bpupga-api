@@ -1,0 +1,7 @@
+Component terms
+
+This distribution includes BiPGA integration code and upstream graph alignment
+implementations. It does not replace the licenses or notices of its individual
+components. Bundled upstream license files and source notices retain their
+original terms. See THIRD_PARTY_NOTICES.md for locations. No additional upstream
+permissions are asserted by this packaging metadata.
