@@ -13,7 +13,7 @@ Run the setup from the repository root and add the consolidated `api/` directory
 **Shell**
 
 ```bash
-export PYTHONPATH="$PWD/baseline_exdit_261029/api${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$PWD/baseline/api${PYTHONPATH:+:$PYTHONPATH}"
 python -c "import bpupga; print(bpupga.__file__)"
 ```
 
@@ -77,7 +77,7 @@ Pair-set recovery and one-to-one feasibility are distinct. Exact duplicates are 
 
 ## Diagnostics cannot find diagnostics.py
 
-Retain `BPUPGA/baseline261023/evaluation/` beside the dated project. The public wrapper reuses that inspected diagnostic implementation and reports a missing source file explicitly. It does not rerun a model to reconstruct artifacts.
+Retain `BPUPGA/baseline/evaluation/` beside the project. The public wrapper reuses that inspected diagnostic implementation and reports a missing source file explicitly. It does not rerun a model to reconstruct artifacts.
 
 <a name="section-log-result"></a>
 

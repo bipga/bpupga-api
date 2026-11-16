@@ -16,7 +16,7 @@ class AlignmentResult:
     # They are intentionally not serialized as JSON because they may be dense.
     partial_decoder_data: Optional[Dict[str, np.ndarray]] = None
     metadata: Dict[str, object] = field(default_factory=dict)
-    # Optional read-only traces returned by the baseline261023 Alpine model.
+    # Optional read-only traces returned by the baseline Alpine model.
     stage_score_matrices: Dict[str, np.ndarray] = field(default_factory=dict)
     stage_diagnostics_metadata: Dict[str, Dict[str, object]] = field(default_factory=dict)
 

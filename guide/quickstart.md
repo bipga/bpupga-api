@@ -17,7 +17,7 @@ The example creates a tiny graph pair in a temporary directory, registers a degr
 ```python
 """Run a small local API example without invoking a built-in model.
 
-From the repository root, set PYTHONPATH=baseline_exdit_261029/api.
+From the repository root, set PYTHONPATH=baseline/api.
 This degree-based adapter illustrates the contract; it is not a baseline claim.
 """
 import json
@@ -82,7 +82,7 @@ Run from the repository root with the import setup in [Installation](installatio
 import bpupga as bp
 
 data = bp.Dataset.load(
-    "baseline_exdit_261029/date_261023/fbtw/bpupga/"
+    "baseline/data/fbtw/bpupga/"
     "rho_s0p6_rho_t0p6/construction_seed_2026")
 method = bp.Algorithm(
     "grampa", parameters={"eta": 1.0}, seed=2026, device="cpu")

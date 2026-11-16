@@ -21,7 +21,7 @@ import networkx as nx
 import numpy as np
 
 # The public facade lives under api/; its frozen research dependencies remain
-# at the dated project root, outside the API source directory.
+# at the project root, outside the API source directory.
 _ROOT = Path(__file__).resolve().parents[2]
 _BASELINE = _ROOT / "baseline"
 # Existing adapters use the top-level common contract. Do not load a second
@@ -87,9 +87,12 @@ def construct(
     overlap requests, with finite-size rounding recorded in metadata. Existing
     outputs are never replaced, including dangling symbolic links.
     """
-    from date_261023.construct_bilateral_partial import (
-        construct_dataset, load_raw_dataset, write_constructed_dataset,
-    )
+    candidates = [_ROOT / "data", _ROOT / "construction", *sorted(_ROOT.glob("date_*"))]
+    directory = next((p for p in candidates if (p / "construct_bilateral_partial.py").is_file()), None)
+    if directory is None:
+        raise FileNotFoundError("Graph constructor is absent from data/ or construction/")
+    package = _private_package("bpupga._construction_runtime", directory)
+    module = importlib.import_module(package + ".construct_bilateral_partial")
 
     source = Path(root).expanduser().resolve()
     destination = Path(output_dir).expanduser().absolute()
@@ -100,12 +103,12 @@ def construct(
         g1_nodes_file="G1.nodes", g2_nodes_file="G2.nodes",
         alignment_file="Alignment.json",
     )
-    raw = load_raw_dataset(source.parent, source.name, args)
-    built = construct_dataset(
+    raw = module.load_raw_dataset(source.parent, source.name, args)
+    built = module.construct_dataset(
         raw, rho_source, rho_target, construction_seed,
         raw_dir_relative=str(source),
     )
-    write_constructed_dataset(destination, built, force=False)
+    module.write_constructed_dataset(destination, built, force=False)
     return load_dataset(destination)
 
 
@@ -362,7 +365,7 @@ def diagnose(result: AlignmentResult, dataset: AlignmentDataset,
              max_dense_entries: int = 25_000_000) -> dict[str, Any]:
     """Run the existing evaluation-only diagnostic module without saving files.
 
-    Requires BPUPGA/baseline261023/evaluation from the research checkout.
+    Requires BPUPGA/baseline/evaluation from the research checkout.
     Endpoint-mask oracle comparisons are explicitly labeled in the report;
     true-cardinality oracle decoding remains disabled. No result is refitted.
     """
@@ -385,9 +388,12 @@ def diagnose(result: AlignmentResult, dataset: AlignmentDataset,
             "reference_note": _reference_note(dataset),
             "leakage_statement": "Post-inference reference accounting only; no refit or oracle decoding",
         }
-    legacy = _ROOT.parent / "BPUPGA/baseline261023/evaluation"
-    if not (legacy / "diagnostics.py").is_file():
-        raise FileNotFoundError(f"Optional diagnostic source is absent: {legacy / 'diagnostics.py'}")
+    sibling = _ROOT.parent / "BPUPGA"
+    candidates = [_ROOT / "evaluation", sibling / "baseline/evaluation",
+                  *sorted(sibling.glob("baseline*/evaluation"))]
+    legacy = next((p for p in candidates if (p / "diagnostics.py").is_file()), None)
+    if legacy is None:
+        raise FileNotFoundError("Optional diagnostic source is absent: BPUPGA/baseline/evaluation/diagnostics.py")
     package = _private_package("bpupga._legacy_evaluation", legacy)
     module = importlib.import_module(package + ".diagnostics")
     # Legacy diagnostics interprets score_matrix as quality regardless of the

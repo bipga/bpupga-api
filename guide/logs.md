@@ -14,7 +14,7 @@ Read a campaign attempt and inspect its existing status, native metrics, resourc
 import bpupga as bp
 
 run = bp.RunLog.open(
-    "baseline_exdit_261029/evaluation/output/.../attempt_0001")
+    "baseline/evaluation/output/.../attempt_0001")
 print(run.status)
 print(run.native_metrics)
 print(run.runtime)
@@ -65,7 +65,7 @@ Pass a campaign `result.json` or `started.json` to the standalone inspector. The
 **Terminal**
 
 ```bash
-python read_run.py baseline_exdit_261029/evaluation/output/your_dataset/your_method/your_condition/seed_2026/attempt_0001
+python read_run.py baseline/evaluation/output/your_dataset/your_method/your_condition/seed_2026/attempt_0001
 ```
 
 ---

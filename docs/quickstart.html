@@ -5,7 +5,7 @@
 <div class="page"><header class="topbar"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="breadcrumb"><a href="index.html">Documentation</a><span>/</span>Quick start</div><div class="top-actions"><span class="release">PYTHON API · v0.1</span><button class="icon-button" id="theme-toggle" aria-label="Toggle color theme">◐</button><a class="top-button" href="api.html">API reference ↗</a></div></header>
 <div class="content-layout"><main id="main"><article><div class="eyebrow">BPUPGA / DOCUMENTATION</div><h1>Quick start</h1><p class="lead">A complete first example, followed by a configurable example for prepared benchmark data.</p><h2 id="toy-example">1. Run a self-contained toy example<a class="permalink" href="#toy-example" aria-label="Link to 1. Run a self-contained toy example">#</a></h2><p>The example creates a tiny graph pair in a temporary directory, registers a degree-based adapter, and calls the same load → align → evaluate workflow. The adapter demonstrates the interface and makes no research performance claim.</p><p><a class="download-link" href="toy_example.py" download>↓ Download toy_example.py</a> <a class="download-link" href="examples.zip" download>↓ All examples</a></p><div class="code-window"><div class="code-header"><span>toy_example.py</span></div><pre><code>&quot;&quot;&quot;Run a small local API example without invoking a built-in model.
 
-From the repository root, set PYTHONPATH=baseline_exdit_261029/api.
+From the repository root, set PYTHONPATH=baseline/api.
 This degree-based adapter illustrates the contract; it is not a baseline claim.
 &quot;&quot;&quot;
 import json
@@ -60,7 +60,7 @@ if __name__ == &quot;__main__&quot;:
 <div class="code-window"><div class="code-header">quickstart.py</div><pre><code id="quickstart-code">import bpupga as bp
 
 data = bp.Dataset.load(
-    &quot;baseline_exdit_261029/date_261023/fbtw/bpupga/&quot;
+    &quot;baseline/data/fbtw/bpupga/&quot;
     &quot;rho_s0p6_rho_t0p6/construction_seed_2026&quot;)
 method = bp.Algorithm(
     &quot;grampa&quot;, parameters={&quot;eta&quot;: 1.0}, seed=2026, device=&quot;cpu&quot;)

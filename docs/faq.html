@@ -7,7 +7,7 @@
 <h2 id="import">Python cannot import bpupga<a class="permalink" href="#import" aria-label="Link to Python cannot import bpupga">#</a></h2>
 <p>Run the setup from the repository root and add the consolidated
 <code>api/</code> directory to Python's import path:</p>
-<div class="code-window"><div class="code-header"><span>Shell</span></div><pre><code>export PYTHONPATH=&quot;$PWD/baseline_exdit_261029/api${PYTHONPATH:+:$PYTHONPATH}&quot;
+<div class="code-window"><div class="code-header"><span>Shell</span></div><pre><code>export PYTHONPATH=&quot;$PWD/baseline/api${PYTHONPATH:+:$PYTHONPATH}&quot;
 python -c &quot;import bpupga; print(bpupga.__file__)&quot;</code></pre></div>
 <p>Use the project's existing model environment. This facade is not a PyPI
 package and depends on the adjacent dated implementation tree. Copying only
@@ -59,7 +59,7 @@ scores.</p>
 are removed during pair scoring, while repeated endpoints are disclosed. Use the
 validity report when interpreting native results.</p>
 <h2 id="diagnose-missing">Diagnostics cannot find diagnostics.py<a class="permalink" href="#diagnose-missing" aria-label="Link to Diagnostics cannot find diagnostics.py">#</a></h2>
-<p>Retain <code>BPUPGA/baseline261023/evaluation/</code> beside the dated project.
+<p>Retain <code>BPUPGA/baseline/evaluation/</code> beside the project.
 The public wrapper reuses that inspected diagnostic implementation and reports a
 missing source file explicitly. It does not rerun a model to reconstruct artifacts.</p>
 <h2 id="log-result">RunLog has no native_metrics<a class="permalink" href="#log-result" aria-label="Link to RunLog has no native_metrics">#</a></h2>

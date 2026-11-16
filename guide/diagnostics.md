@@ -67,7 +67,7 @@ if "skipped_diagnostics" in report:
 
 ## Source-checkout dependency
 
-This wrapper reuses `BPUPGA/baseline261023/evaluation/diagnostics.py` from the sibling research tree. Retain that source when moving the project. If it is absent and full score diagnostics are requested, a `FileNotFoundError` identifies the missing file. The library does not silently substitute another diagnostic implementation.
+This wrapper reuses `BPUPGA/baseline/evaluation/diagnostics.py` from the sibling research tree. Retain that source when moving the project. If it is absent and full score diagnostics are requested, a `FileNotFoundError` identifies the missing file. The library does not silently substitute another diagnostic implementation.
 
 Reference: [diagnose](api.md#section-diagnose), [AlignmentDataset](api.md#section-alignmentdataset), and [AlignmentResult](api.md#section-alignmentresult).
 

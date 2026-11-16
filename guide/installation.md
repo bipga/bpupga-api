@@ -10,7 +10,7 @@ Use the existing model environment and import the API from the consolidated api 
 
 Use Python 3.10 or later. The facade needs NetworkX and NumPy; evaluation uses scikit-learn, and the optional diagnostic implementation uses SciPy. Built-in methods need their existing author dependencies and, where applicable, weights and a supported PyTorch installation.
 
-The complete research checkout is required: the API delegates to sibling implementations in `baseline_exdit_261029/baseline/`, constructors in `date_261023/`, and the existing evaluation code. Diagnostics additionally use `BPUPGA/baseline261023/evaluation/`.
+The complete research checkout is required: the API delegates to sibling implementations in `baseline/baseline/`, constructors in `data/`, and the existing evaluation code. Diagnostics additionally use `BPUPGA/baseline/evaluation/`.
 
 <a name="section-pythonpath"></a>
 
@@ -21,11 +21,11 @@ From the **repository root**, run:
 **Terminal**
 
 ```bash
-export PYTHONPATH="$PWD/baseline_exdit_261029/api${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$PWD/baseline/api${PYTHONPATH:+:$PYTHONPATH}"
 python -c "import bpupga; print(bpupga.__file__)"
 ```
 
-Here `python` means your configured project/model interpreter. If you work from `baseline_exdit_261029/`, use `PYTHONPATH=api` instead.
+Here `python` means your configured project/model interpreter. If you work from `baseline/`, use `PYTHONPATH=api` instead.
 
 <a name="section-editable-install"></a>
 
@@ -36,7 +36,7 @@ To keep imports available without setting PYTHONPATH each time, install the loca
 **Terminal**
 
 ```bash
-python -m pip install --no-deps --no-build-isolation -e baseline_exdit_261029/api
+python -m pip install --no-deps --no-build-isolation -e baseline/api
 ```
 
 This requires setuptools (64 or newer) in that environment. It installs the distribution `bpupga-local`, imported as `bpupga`. Keep the repository in place: this facade is bound to the surrounding research checkout and is not a standalone wheel or a PyPI release. The command does not install the vendor dependencies of each alignment method.
@@ -48,14 +48,14 @@ This requires setuptools (64 or newer) in that environment. It installs the dist
 **Repository**
 
 ```python
-baseline_exdit_261029/
+baseline/
 ├── api/
 │   ├── README.md
 │   ├── pyproject.toml
 │   ├── bpupga/       # Python facade and its tests
 │   └── site/         # Documentation source and deployed assets
 ├── baseline/         # All method implementations, including OPGM-U
-├── date_261023/      # Existing datasets and constructors
+├── data/      # Existing datasets and constructors
 └── evaluation/      # Existing campaign evaluation
 ```
 
