@@ -44,6 +44,9 @@ jobs:
           name: python-distributions
           path: dist/*
   container:
+    if: >-
+      (github.event_name == 'push' && !startsWith(github.event.head_commit.message, 'Publish BiPGA to PyPI')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.publish_target == 'none')
     needs: package
     runs-on: ubuntu-latest
     timeout-minutes: 50
@@ -92,7 +95,9 @@ jobs:
         with:
           repository-url: https://test.pypi.org/legacy/
   pypi:
-    if: github.event_name == 'workflow_dispatch' && inputs.publish_target == 'pypi'
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.publish_target == 'pypi') ||
+      (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'Publish BiPGA to PyPI'))
     needs: package
     runs-on: ubuntu-latest
     environment: pypi
