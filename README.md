@@ -6,6 +6,7 @@ Standalone Python interfaces and twelve graph alignment methods, with constructi
 - [Install and download](https://bipga.github.io/installation.html)
 - [Runtime source and command reference](runtime/README.md)
 - [GPU Dockerfile](runtime/docker/Dockerfile)
+- Public GPU image: `ghcr.io/bipga/bipga:0.1.0`
 - [Paper artifact](https://bipga.github.io/supplementary/)
 
 ## Install from source

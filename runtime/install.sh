@@ -19,9 +19,9 @@ fi
 bipga_interpreter="$bipga_root/.venv/bin/python"
 "$bipga_interpreter" -m pip install --upgrade pip
 if [ "$bipga_mode" = gpu ]; then
-  "$bipga_interpreter" -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cu128
+  "$bipga_interpreter" -m pip install --no-cache-dir torch==2.10.0+cu128 --index-url https://download.pytorch.org/whl/cu128
 else
-  "$bipga_interpreter" -m pip install --no-cache-dir torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+  "$bipga_interpreter" -m pip install --no-cache-dir torch==2.10.0+cpu --index-url https://download.pytorch.org/whl/cpu
 fi
 if [ -d "$bipga_root/wheels" ]; then
   "$bipga_interpreter" -m pip install --find-links "$bipga_root/wheels" -c "$bipga_root/requirements-lock.txt" 'bipga[all]==0.1.0'
